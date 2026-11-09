@@ -5,11 +5,6 @@
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // ── Nav background on scroll ──
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
-
   // ── Mobile menu ──
   const setMenu = (open) => {
     nav.classList.toggle('open', open);
@@ -21,9 +16,7 @@
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 
   // ── Reveal on scroll ──
-  // Hero is above the fold: animate it in on load instead of waiting for the observer
-  requestAnimationFrame(() => document.querySelectorAll('.hero .reveal').forEach((el) => el.classList.add('in')));
-  const reveals = document.querySelectorAll('.reveal:not(.hero .reveal)');
+  const reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -48,6 +41,37 @@
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     sections.forEach((s) => s && spy.observe(s));
+  }
+
+  // ── Hero video ──
+  const heroVideo = document.getElementById('hero-video');
+  const soundToggle = document.getElementById('sound-toggle');
+  const prefersStill = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let heroInView = true;
+
+  // Plays only while on screen, so scrolling away also stops the sound.
+  // With reduced motion it stays still unless the visitor asks for sound.
+  const syncHeroVideo = () => {
+    if (heroInView && (!prefersStill || !heroVideo.muted)) heroVideo.play().catch(() => {});
+    else heroVideo.pause();
+  };
+
+  soundToggle.addEventListener('click', () => {
+    heroVideo.muted = !heroVideo.muted;
+    soundToggle.classList.toggle('on', !heroVideo.muted);
+    syncHeroVideo();
+  });
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      heroInView = entry.isIntersecting;
+      syncHeroVideo();
+    }).observe(heroVideo);
+
+    // The bar is transparent only while it sits over the video
+    new IntersectionObserver(([entry]) => {
+      nav.classList.toggle('over-hero', entry.isIntersecting);
+    }, { rootMargin: `-${nav.offsetHeight}px 0px 0px 0px` }).observe(heroVideo);
   }
 
   // ── PT / EN ──

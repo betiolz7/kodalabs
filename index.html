@@ -50,7 +50,7 @@
   <a class="skip-link" href="#main" data-en="Skip to content">Pular para o conteúdo</a>
 
   <!-- ── NAV ── -->
-  <header class="nav" id="nav">
+  <header class="nav over-hero" id="nav">
     <a class="nav-brand" href="#top" aria-label="Kodalabs Solutions">
       <img src="assets/img/kodalabs-logo.webp" alt="" width="28" height="28" />
       <span>Kodalabs</span>
@@ -71,29 +71,12 @@
   <main id="main">
     <!-- ── HERO ── -->
     <section class="hero" id="top">
-      <div class="hero-text">
-        <p class="eyebrow reveal" data-en="Software studio · Brazil">Estúdio de software · Brasil</p>
-        <h1 class="hero-title" aria-label="Kodalabs Solutions">
-          <span class="line"><span>Koda</span></span>
-          <span class="line"><span>labs</span></span>
-          <span class="line line-outline"><span>Solutions</span></span>
-        </h1>
-        <p class="hero-sub reveal" data-en="Web development, automation and integrations — from front-end to back-end, built to last.">
-          Desenvolvimento web, automações e integrações — do front ao back-end, feito para durar.
-        </p>
-        <div class="hero-cta reveal">
-          <a class="btn btn-solid" href="https://wa.me/5519995068303?text=Oi%2C%20vim%20pelo%20site%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener" data-en="Start a project">Começar um projeto</a>
-          <a class="btn btn-ghost" href="#projetos" data-en="See our work">Ver projetos</a>
-        </div>
-      </div>
-      <figure class="hero-dog reveal" aria-hidden="true">
-        <img src="assets/img/koda-dog.jpg" alt="" width="800" height="800" fetchpriority="high" />
-      </figure>
-      <ul class="hero-meta reveal">
-        <li><strong>4+</strong> <span data-en="years shipping">anos entregando</span></li>
-        <li><strong>4</strong> <span data-en="full-stack founders">founders full-stack</span></li>
-        <li><strong>PT / EN</strong> <span data-en="projects in both languages">projetos nos dois idiomas</span></li>
-      </ul>
+      <h1 class="visually-hidden">Kodalabs</h1>
+      <video class="hero-video" id="hero-video" src="assets/img/kodahome.mp4" poster="assets/img/kodahome-poster.webp" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+      <button class="sound-toggle" id="sound-toggle" type="button">
+        <span class="sound-off" data-en="Turn sound on">Ativar som</span>
+        <span class="sound-on" data-en="Turn sound off">Desativar som</span>
+      </button>
     </section>
 
     <!-- ── SOBRE ── -->
@@ -102,14 +85,9 @@
       <p class="statement reveal" data-en="We are a software company with over 4 years delivering modern, efficient web solutions — robust, fast applications with an excellent user experience.">
         Somos uma empresa de software com mais de 4 anos entregando soluções web modernas e eficientes — aplicações robustas, performáticas e com excelente experiência de uso.
       </p>
-      <div class="about-cols">
-        <p class="reveal" data-en="Beyond web development, we work extensively with automation, systems and API integrations and custom software, connecting tools and processes to make operations more efficient and scalable.">
-          Além do desenvolvimento web, atuamos fortemente em automações, integrações de sistemas e APIs e software sob medida, conectando ferramentas e processos para tornar operações mais eficientes e escaláveis.
-        </p>
-        <p class="reveal" data-en="Our team blends technical expertise with product vision — from design and project management to complex integrations with existing systems, always prioritizing quality, performance and attention to detail.">
-          Nossa equipe combina experiência técnica com visão de produto — do design e gestão de projetos a integrações complexas com sistemas já existentes, sempre priorizando qualidade, desempenho e atenção aos detalhes.
-        </p>
-      </div>
+      <p class="about-text reveal" data-en="Beyond web development, we work extensively with automation, systems and API integrations and custom software, connecting tools and processes to make operations more efficient and scalable. Our team blends technical expertise with product vision, from design to project management, always prioritizing quality, performance and attention to detail.">
+        Além do desenvolvimento web, atuamos fortemente em automações, integrações de sistemas e APIs e software sob medida, conectando ferramentas e processos para tornar operações mais eficientes e escaláveis. Nossa equipe combina experiência técnica com visão de produto, do design à gestão de projetos, sempre priorizando qualidade, desempenho e atenção aos detalhes.
+      </p>
     </section>
 
     <!-- ── SERVIÇOS ── -->
@@ -153,6 +131,61 @@
     <!-- ── PROJETOS ── -->
     <section class="section work" id="projetos">
       <p class="section-label reveal"><span>03</span> <span data-en="Selected work">Projetos selecionados</span></p>
+
+      <h3 class="work-subtitle reveal">Landing pages</h3>
+
+      <article class="feature reveal">
+        <a class="feature-media" href="https://sincfotografia.com/" target="_blank" rel="noopener">
+          <img src="assets/img/sinc-fotografia.webp" alt="Site da Sinc Fotografia" loading="lazy" />
+        </a>
+        <div class="feature-body">
+          <p class="feature-kicker" data-en="Landing page · Photography">Landing page · Fotografia</p>
+          <h3>Sinc Fotografia</h3>
+          <p data-en="Black &amp; white portfolio with a private admin panel to edit photos, content and albums.">
+            Portfólio em preto e branco com painel admin privado para editar fotos, conteúdo e álbuns.
+          </p>
+          <ul class="tags"><li>Next.js</li><li>Supabase</li></ul>
+          <div class="links">
+            <a href="https://sincfotografia.com/" target="_blank" rel="noopener" data-en="View project ↗">Ver projeto ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="feature feature-alt reveal">
+        <a class="feature-media" href="https://procarpentry.pradortiz.lat" target="_blank" rel="noopener">
+          <img src="assets/img/pro-carpentry.webp" alt="Site da Pro Carpentry &amp; Co." loading="lazy" style="object-position: left center" />
+        </a>
+        <div class="feature-body">
+          <p class="feature-kicker" data-en="Landing page · Carpentry">Landing page · Carpintaria</p>
+          <h3>Pro Carpentry &amp; Co.</h3>
+          <p data-en="Website for a carpentry company on the Mississippi coast — decks, renovations and custom cabinets.">
+            Site para carpintaria na costa do Mississippi (EUA) — decks, reformas e armários sob medida.
+          </p>
+          <ul class="tags"><li>Next.js</li><li>Prisma</li></ul>
+          <div class="links">
+            <a href="https://procarpentry.pradortiz.lat" target="_blank" rel="noopener" data-en="View project ↗">Ver projeto ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="feature reveal">
+        <a class="feature-media" href="https://gridcompany.devpro.space/" target="_blank" rel="noopener">
+          <img src="assets/img/grid-company.webp" alt="Site da Grid Company" loading="lazy" />
+        </a>
+        <div class="feature-body">
+          <p class="feature-kicker" data-en="Landing page · Audiovisual &amp; marketing">Landing page · Audiovisual e marketing</p>
+          <h3>Grid Company</h3>
+          <p data-en="Website for an audiovisual and marketing agency in Ribeirão Preto — films, social media and paid traffic.">
+            Site para agência de audiovisual e marketing em Ribeirão Preto — filmes, social media e tráfego pago.
+          </p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <div class="links">
+            <a href="https://gridcompany.devpro.space/" target="_blank" rel="noopener" data-en="View project ↗">Ver projeto ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <h3 class="work-subtitle reveal" data-en="Games &amp; tooling">Games e ferramentas</h3>
 
       <article class="feature reveal">
         <a class="feature-media" href="https://www.spartanport.com/pt" target="_blank" rel="noopener">
@@ -209,24 +242,6 @@
 
       <h3 class="work-subtitle reveal" data-en="Client &amp; product work">Clientes e produtos</h3>
       <ul class="work-list">
-        <li class="reveal">
-          <a href="https://sincfotografia.com/" target="_blank" rel="noopener">
-            <span class="work-thumb"><img src="assets/img/sinc-fotografia.webp" alt="" loading="lazy" /></span>
-            <span class="wl-name">Sinc Fotografia</span>
-            <span class="wl-desc" data-en="Black &amp; white portfolio with a private admin panel to edit photos, content and albums.">Portfólio em preto e branco com painel admin privado para editar fotos, conteúdo e álbuns.</span>
-            <span class="wl-stack">Next.js · Supabase</span>
-            <span class="wl-arrow" aria-hidden="true">↗</span>
-          </a>
-        </li>
-        <li class="reveal">
-          <a href="https://procarpentry.pradortiz.lat" target="_blank" rel="noopener">
-            <span class="work-thumb"><img src="assets/img/pro-carpentry.webp" alt="" loading="lazy" /></span>
-            <span class="wl-name">Pro Carpentry &amp; Co.</span>
-            <span class="wl-desc" data-en="Website for a carpentry company on the Mississippi coast — decks, renovations and custom cabinets.">Site para carpintaria na costa do Mississippi (EUA) — decks, reformas e armários sob medida.</span>
-            <span class="wl-stack">Next.js · Prisma</span>
-            <span class="wl-arrow" aria-hidden="true">↗</span>
-          </a>
-        </li>
         <li class="reveal">
           <a href="https://github.com/Invictus-potens/I.Agro" target="_blank" rel="noopener">
             <span class="work-thumb"><img src="assets/img/iagro-assistente.webp" alt="" loading="lazy" /></span>
