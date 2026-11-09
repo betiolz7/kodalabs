@@ -1,0 +1,7 @@
+services:
+  site:
+    build: .
+    container_name: kodalabs-site
+    restart: unless-stopped
+    ports:
+      - "${PORT:-80}:80"
