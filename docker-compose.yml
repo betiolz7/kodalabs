@@ -1,3 +1,5 @@
+name: kodalabs
+
 services:
   site:
     build: .
@@ -5,3 +7,16 @@ services:
     restart: unless-stopped
     ports:
       - "${PORT:-80}:80"
+
+  deployer:
+    image: docker:27-cli
+    container_name: kodalabs-deployer
+    restart: unless-stopped
+    working_dir: /repo
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - .:/repo
+    entrypoint: >
+      sh -c "apk add --no-cache git &&
+             git config --global --add safe.directory /repo &&
+             while true; do sh deploy/deploy.sh; sleep 60; done"
