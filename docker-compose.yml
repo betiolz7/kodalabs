@@ -6,7 +6,7 @@ services:
     container_name: kodalabs-site
     restart: unless-stopped
     ports:
-      - "${PORT:-80}:80"
+      - "${PORT:-27493}:80"
 
   deployer:
     image: docker:27-cli
